@@ -160,16 +160,16 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
-              /*SizedBox(
+              SizedBox(
                 height: 300,
                 child: !isLoading
-                    ? JsonTreeViewer(
-                        data: details,
+                    ? Text(
+                     details.toString(),
                       )
                     : const Center(
                         child: CircularProgressIndicator(),
                       ),
-              ),*/
+              ),
               const SizedBox(
                 height: 20,
               ),
