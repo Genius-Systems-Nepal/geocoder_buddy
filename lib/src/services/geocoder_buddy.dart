@@ -1,5 +1,5 @@
 import 'package:geocoder_buddy/geocoder_buddy.dart';
-import 'package:geocoder_buddy/src/models/MapData.dart';
+import 'package:geocoder_buddy/src/models/map_data.dart';
 import 'package:geocoder_buddy/src/services/NetworkService.dart';
 
 class GeocoderBuddy {

@@ -1,22 +1,24 @@
 // Geocoder Buddy Data Model
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
+
 GBData gbDataFromJson(String str) => GBData.fromJson(json.decode(str));
 
 String gbDataToJson(GBData data) => json.encode(data.toJson());
 
 class GBData {
   GBData({
-    required this.placeId,
-    required this.osmType,
-    required this.id,
-    required this.lat,
-    required this.lon,
-    required this.placeRank,
-    required this.importance,
-    required this.displayName,
-    required this.address,
-    required this.boundingbox,
+    @required this.placeId,
+    @required this.osmType,
+    @required this.id,
+    @required this.lat,
+    @required this.lon,
+    @required this.placeRank,
+    @required this.importance,
+    @required this.displayName,
+    @required this.address,
+    @required this.boundingbox,
   });
 
   int placeId;
@@ -59,15 +61,15 @@ class GBData {
 
 class Address {
   Address({
-    required this.road,
-    required this.village,
-    required this.county,
-    required this.stateDistrict,
-    required this.state,
-    required this.iso31662Lvl4,
-    required this.postcode,
-    required this.country,
-    required this.countryCode,
+    @required this.road,
+    @required this.village,
+    @required this.county,
+    @required this.stateDistrict,
+    @required this.state,
+    @required this.iso31662Lvl4,
+    @required this.postcode,
+    @required this.country,
+    @required this.countryCode,
   });
 
   String road;

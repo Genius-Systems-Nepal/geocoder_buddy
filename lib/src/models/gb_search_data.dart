@@ -1,30 +1,27 @@
-// Map Data Model
 import 'dart:convert';
 
-List<MapData> mapDataFromJson(String str) =>
-    List<MapData>.from(json.decode(str).map((x) => MapData.fromJson(x)));
+import 'package:flutter/material.dart';
 
-String mapDataToJson(List<MapData> data) =>
+List<GBSearchData> bgSearchDataFromJson(String str) => List<GBSearchData>.from(
+    json.decode(str).map((x) => GBSearchData.fromJson(x)));
+
+String bgSearchDataToJson(List<GBSearchData> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class MapData {
-  MapData({
-    required this.placeId,
-    required this.licence,
-    required this.osmType,
-    required this.osmId,
-    required this.boundingbox,
-    required this.lat,
-    required this.lon,
-    required this.displayName,
-    required this.placeRank,
-    required this.importance,
+class GBSearchData {
+  GBSearchData({
+    @required this.placeId,
+    @required this.id,
+    @required this.boundingbox,
+    @required this.lat,
+    @required this.lon,
+    @required this.displayName,
+    @required this.placeRank,
+    @required this.importance,
   });
 
   int placeId;
-  String licence;
-  String osmType;
-  int osmId;
+  int id;
   List<String> boundingbox;
   String lat;
   String lon;
@@ -32,11 +29,9 @@ class MapData {
   int placeRank;
   double importance;
 
-  factory MapData.fromJson(Map<String, dynamic> json) => MapData(
+  factory GBSearchData.fromJson(Map<String, dynamic> json) => GBSearchData(
         placeId: json["place_id"],
-        licence: json["licence"],
-        osmType: json["osm_type"],
-        osmId: json["osm_id"],
+        id: json["osm_id"],
         boundingbox: List<String>.from(json["boundingbox"].map((x) => x)),
         lat: json["lat"],
         lon: json["lon"],
@@ -47,9 +42,7 @@ class MapData {
 
   Map<String, dynamic> toJson() => {
         "place_id": placeId,
-        "licence": licence,
-        "osm_type": osmType,
-        "osm_id": osmId,
+        "osm_id": id,
         "boundingbox": List<dynamic>.from(boundingbox.map((x) => x)),
         "lat": lat,
         "lon": lon,

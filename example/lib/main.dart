@@ -1,21 +1,19 @@
 import 'package:example/SearchDataDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoder_buddy/geocoder_buddy.dart';
-import 'package:json_tree_viewer/json_tree_viewer.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Geocoder Buddy Example',
       theme: ThemeData(
-        useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Geocoder Buddy Example'),
@@ -24,7 +22,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key key, @required this.title}) : super(key: key);
 
   final String title;
 
@@ -162,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
-              SizedBox(
+              /*SizedBox(
                 height: 300,
                 child: !isLoading
                     ? JsonTreeViewer(
@@ -171,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     : const Center(
                         child: CircularProgressIndicator(),
                       ),
-              ),
+              ),*/
               const SizedBox(
                 height: 20,
               ),

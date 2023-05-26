@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:geocoder_buddy/geocoder_buddy.dart';
-import 'package:json_tree_viewer/json_tree_viewer.dart';
+// import 'package:json_tree_viewer/json_tree_viewer.dart';
 
 class SearchDataDetails extends StatefulWidget {
   GBSearchData data;
-  SearchDataDetails({Key? key, required this.data}) : super(key: key);
+  SearchDataDetails({Key key, @required this.data}) : super(key: key);
 
   @override
   State<SearchDataDetails> createState() => _SearchDataDetailsState();
@@ -39,7 +39,7 @@ class _SearchDataDetailsState extends State<SearchDataDetails> {
         title: Text("Search Item Details"),
       ),
       body: Container(
-        height: MediaQuery.of(context).size.height,
+        /*height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: !isLoading
             ? JsonTreeViewer(
@@ -47,7 +47,7 @@ class _SearchDataDetailsState extends State<SearchDataDetails> {
               )
             : const Center(
                 child: CircularProgressIndicator(),
-              ),
+              ),*/
       ),
     );
   }
