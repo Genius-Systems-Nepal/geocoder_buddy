@@ -67,6 +67,7 @@ class Address {
     @required this.neighbourhood,
     @required this.village,
     @required this.county,
+    @required this.city,
     @required this.stateDistrict,
     @required this.state,
     @required this.region,
@@ -83,6 +84,7 @@ class Address {
   String neighbourhood;
   String village;
   String county;
+  String city;
   String stateDistrict;
   String state;
   String iso31662Lvl4;
@@ -99,6 +101,7 @@ class Address {
     neighbourhood: json["neighbourhood"],
         village: json["village"],
         county: json["county"],
+        city: json["city"],
         stateDistrict: json["state_district"],
         state: json["state"],
         region: json["region"],
@@ -116,9 +119,10 @@ class Address {
         "neighbourhood": neighbourhood,
         "village": village,
         "county": county,
+        "city": city,
         "state_district": stateDistrict,
         "state": state,
-    "region": region,
+        "region": region,
         "ISO3166-2-lvl4": iso31662Lvl4,
         "postcode": postcode,
         "country": country,
