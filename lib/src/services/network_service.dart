@@ -26,6 +26,8 @@ class NetworkService {
 
     if (response.statusCode == 200) {
       var data = await response.stream.bytesToString();
+      // print('OSM url-- $PATH   ${pos.lat}   &lon= ${pos.lng}');
+      // print('OSM Data-- ${data.toString()}');
       return gbDataFromJson(data);
     } else {
       throw Exception(response.reasonPhrase);
